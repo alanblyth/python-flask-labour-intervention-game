@@ -1,0 +1,532 @@
+Stages:
+  -1:
+    name: You are approaching your due date. You are feeling well, and all checks indicate that your baby is fine.
+    image: pregnant1.jpg
+    options:
+    - key: 0
+      name: Roll the die
+      goto: 1
+      outcomes:
+      - key: 0
+        name: Go to Q
+        likelihood: .5
+        goto: 17
+      - key: 1
+        name: Go to Start
+        likelihood: .5
+        goto: 0
+
+  0:
+    name: Your midwife offers you a stretch and sweep at your next appointment.
+    image: pregnant1.jpg
+    options:
+    - key: 0
+      name: 'Yes'
+      outcomes:
+      - key: 0
+        name: Go to D
+        likelihood: .17
+        goto: 4
+      - key: 1
+        name: Go to C
+        likelihood: .83
+        goto: 3
+    - key: 1
+      name: 'No'
+      outcomes:
+      - key: 0
+        name: Go to B
+        likelihood: 1
+        goto: 2
+  2:
+    name: You decide to wait for your baby to come when he/she is ready unless something indicates that there is a problem. At 41w+3, your caregiver says it would be safer for your baby to be born sooner rather than later and suggests a sweep now or chemical induction tomorrow.
+    image: pregnant1.jpg
+    options:
+    - key: 0
+      name: Have a sweep
+      outcomes:
+      - key: 0
+        name: Go to E
+        likelihood: 1
+        goto: 5
+    - key: 1
+      name: Accept prostaglandin induction
+      outcomes:
+      - key: 0
+        name: Go to J
+        likelihood: 1
+        goto: 10
+    - key: 2
+      name: Wait and be monitored
+      outcomes:
+      - key: 0
+        name: Go to K
+        likelihood: 1
+        goto: 11
+  3:
+    name: The sweep was uncomfortable and caused some niggly contractions, but you still aren’t in labour after 2 days. Your caregiver offers another sweep tomorrow.
+    image: labour1.jpg
+    options:
+    - key: 0
+      name: 'Yes'
+      outcomes:
+      - key: 0
+        name: Go to E
+        likelihood: 1
+        goto: 5
+    - key: 1
+      name: 'No'
+      outcomes:
+      - key: 0
+        name: Go to B
+        likelihood: 1
+        goto: 2
+  4:
+    name: The sweep was uncomfortable and caused some bleeding. Contractions start about 6 hours later.
+    image: labour1.jpg
+    options:
+    - key: 0
+      name: Roll the die
+      outcomes:
+      - key: 0
+        name: Go to F
+        likelihood: .33
+        goto: 6
+      - key: 0
+        name: Go to G
+        likelihood: .67
+        goto: 7
+  5:
+    name: The sweep was uncomfortable and caused some bleeding. Infrequent contractions begin at once.
+    image: labour1.jpg
+    options:
+    - key: 0
+      name: Roll the die
+      outcomes:
+      - key: 0
+        name: Go to F
+        likelihood: .33
+        goto: 6
+      - key: 1
+        name: Go to G
+        likelihood: .67
+        goto: 7
+  6:
+    name: Labour progresses well, you choose natural pain relief (e.g. not epidural or opioids) and have intermittent monitoring. Your baby is born vaginally with no complications 11 hours later. 
+    image: baby1.jpg
+    options:
+    - key: 0
+      name: Reset
+      outcomes:
+      - key: 0
+        name: Reset
+        likelihood: 1
+        goto: -1
+  7:
+    name: After 4 hours the midwife asks for consent to perform a vaginal examination (VE).
+    image: labour1.jpg
+    options:
+    - key: 0
+      name: 'Yes'
+      outcomes:
+      - key: 0
+        name: Go to H
+        likelihood: 1
+        goto: 8
+    - key: 1
+      name: 'No'
+      outcomes:
+      - key: 0
+        name: Go to I
+        likelihood: 1
+        goto: 9
+  8:
+    name: The midwife performs a vaginal examination and you are 3cm dilated. She offers to break the waters to speed things along.
+    image: labour1.jpg
+    options:
+    - key: 0
+      name: 'Yes'
+      outcomes:
+      - key: 0
+        name: Go to L
+        likelihood: 1
+        goto: 12
+    - key: 1
+      name: 'No'
+      outcomes:
+      - key: 0
+        name: Go to M
+        likelihood: 1
+        goto: 13
+  9:
+    name: Labour is progressing slowly. After 2 further hours, your midwife requests permission to perform a vaginal exam to assess progress.
+    image: labour1.jpg
+    options:
+    - key: 0
+      name: 'Yes'
+      outcomes:
+      - key: 0
+        name: Go to H
+        likelihood: 1
+        goto: 8
+    - key: 1
+      name: 'No'
+      outcomes:
+      - key: 0
+        name: Go to N
+        likelihood: 1
+        goto: 14
+  10:
+    name: You are given the prostaglandin gel. 6 hours pass.
+    image: pregnant1.jpg
+    options:
+    - key: 0
+      name: 'Roll the dice'
+      outcomes:
+      - key: 0
+        name: Go to O
+        likelihood: .5
+        goto: 15
+      - key: 1
+        name: Go to M
+        likelihood: .5
+        goto: 13
+  11:
+    name: You go to the hospital for twice weekly monitoring of the baby’s heartbeat and amniotic fluid.
+    image: pregnant1.jpg
+    options:
+    - key: 0
+      name: 'Roll the dice'
+      outcomes:
+      - key: 0
+        name: Go to Q
+        likelihood: .5
+        goto: 17
+      - key: 1
+        name: Go to R
+        likelihood: .5
+        goto: 18
+  12:
+    name: You have your waters broken.
+    image: pregnant1.jpg
+    options:
+    - key: 0
+      name: 'Roll the dice'
+      outcomes:
+      - key: 0
+        name: Go to S
+        likelihood: .33
+        goto: 19
+      - key: 1
+        name: Go to T
+        likelihood: .67
+        goto: 20
+  13:
+    name: Your labour progresses and after a few hours, you begin second stage.
+    image: labour1.jpg
+    options:
+    - key: 0
+      name: 'Roll the dice'
+      outcomes:
+      - key: 0
+        name: Go to U
+        likelihood: .33
+        goto: 21
+      - key: 1
+        name: Go to V
+        likelihood: .67
+        goto: 22
+  14:
+    name: Labour continues to progress slowly. You are exhausted and decide that you require additional pain management.
+    image: labour1.jpg
+    options:
+    - key: 0
+      name: Opioids
+      outcomes:
+      - key: 0
+        name: Go to W
+        likelihood: 1
+        goto: 23
+    - key: 1
+      name: Epidural
+      outcomes:
+      - key: 0
+        name: Go to X
+        likelihood: 1
+        goto: 24
+    - key: 2
+      name: Natural pain relief (gas and air, UFO and movement, massage etc), 
+      outcomes:
+      - key: 0
+        name: Go to M
+        likelihood: 1
+        goto: 13
+  15:
+    name: There has been little progress with the prostaglandin. You have another dose.  After a couple of hours contractions start slowly.
+    image: pregnant1.jpg
+    options:
+    - key: 0
+      name: 'Roll the dice'
+      outcomes:
+      - key: 0
+        name: Go to F
+        likelihood: .34
+        goto: 6
+      - key: 1
+        name: Go to I
+        likelihood: .33
+        goto: 9
+      - key: 1
+        name: Go to T
+        likelihood: .33
+        goto: 20
+  16:
+    name: Contractions stop. All is well, but the prostaglandin hasn’t worked for you. Your caregiver offers a caesarean or you can go home and come back for another try in a couple of days.
+    image: pregnant1.jpg
+    options:
+    - key: 0
+      name: 'Come back another day'
+      outcomes:
+      - key: 0
+        name: Go to J
+        likelihood: 1
+        goto: 10
+    - key: 1
+      name: 'Caesarian'
+      outcomes:
+      - key: 0
+        name: Go to X
+        likelihood: 1
+        goto: 101
+  17:
+    name: All is well with you and your baby. Labour starts spontaneously 3 days later, and your baby is born without complications.
+    image: baby2.jpg
+    options:
+    - key: 0
+      name: Reset
+      outcomes:
+      - key: 0
+        name: Reset
+        likelihood: 1
+        goto: -1
+  18:
+    name: Your baby shows some signs of distress at the next check and your midwife tells you you’re your baby needs to be born soon.
+    image: labour1.jpg
+    options:
+    - key: 0
+      name: 'Wait'
+      outcomes:
+      - key: 0
+        name: Go to K
+        likelihood: 1
+        goto: 11
+    - key: 1
+      name: 'Induction'
+      outcomes:
+      - key: 0
+        name: Go to J
+        likelihood: 1
+        goto: 12
+    - key: 3
+      name: 'Caesarian'
+      outcomes:
+      - key: 0
+        name: Go to X
+        likelihood: 1
+        goto: 101
+  19:
+    name: Contractions become more intense and you start to feel panicky and unable to cope.  You ask your caregiver to tell you about your pain management options.
+    image: labour1.jpg
+    options:
+    - key: 0
+      name: 'Epidural'
+      outcomes:
+      - key: 0
+        name: Go to X
+        likelihood: 1
+        goto: 24
+    - key: 1
+      name: 'Opiods'
+      outcomes:
+      - key: 0
+        name: Go to Y
+        likelihood: 1
+        goto: 25
+    - key: 3
+      name: 'Natural pain relief (gas and air, UFO and movement, massage etc)'
+      outcomes:
+      - key: 0
+        name: Go to M
+        likelihood: 1
+        goto: 13
+  20:
+    name: Contractions are still sporadic, and your caregiver recommends a syntocinon drip to speed things along. You are concerned about intense contractions and request additional pain relief. Continuous foetal monitoring (CFM) of the baby’s heartbeat is standard procedure.
+    image: labour1.jpg
+    options:
+    - key: 0
+      name: 'Opioids and CFM'
+      outcomes:
+      - key: 0
+        name: Go to Y
+        likelihood: 1
+        goto: 25
+    - key: 1
+      name: 'opioids and intermittent monitoring'
+      outcomes:
+      - key: 0
+        name: Go to W
+        likelihood: 1
+        goto: 23
+    - key: 3
+      name: 'Epidural'
+      outcomes:
+      - key: 0
+        name: Go to M
+        likelihood: 1
+        goto: 24
+  21:
+    name: There has been little progress with the prostaglandin. You have another dose.  After a couple of hours contractions start slowly.    
+    image: labour1.jpg
+    options:
+    - key: 0
+      name: 'Roll the dice'
+      outcomes:
+      - key: 0
+        name: Born by ventouse
+        likelihood: .5
+        goto: 102
+      - key: 1
+        name: Born by forceps
+        likelihood: .17
+        goto: 103
+      - key: 1
+        name: Born by caesarian
+        likelihood: .33
+        goto: 101
+
+  22:
+    name: Your baby is born vaginally after a 1 hour second stage.
+    image: baby1.jpg
+    options:
+    - key: 0
+      name: Reset
+      outcomes:
+      - key: 0
+        name: Reset
+        likelihood: 1
+        goto: -1
+  23:
+    name: You relax with the opioid. Labour progresses well, and your baby is born vaginally with no complications 5 hours later. 
+    image: baby2.jpg
+    options:
+    - key: 0
+      name: Reset
+      outcomes:
+      - key: 0
+        name: Reset
+        likelihood: 1
+        goto: -1
+  24:
+    name: You relax with the epidural and labour progresses. After 3 hours, you are ready to push.
+    image: labour1.jpg
+    options:
+    - key: 0
+      name: 'Roll the dice'
+      outcomes:
+      - key: 0
+        name: Born vaginally with no complications 2 hours later
+        likelihood: .33
+        goto: 104
+      - key: 1
+        name: Born by ventouse
+        likelihood: .17
+        goto: 102
+      - key: 2
+        name: Born by forceps
+        likelihood: .17
+        goto: 103
+      - key: 3
+        name: Born by caesarian
+        likelihood: .33
+        goto: 101
+  25:
+    name: Continuous Foetal Monitoring means you are unable to remain mobile.
+    image: labour1.jpg
+    options:
+    - key: 0
+      name: 'Roll the dice'
+      outcomes:
+      - key: 0
+        name: Go to M
+        likelihood: .5
+        goto: 13
+      - key: 1
+        name: Go to Z
+        likelihood: .5
+        goto: 25
+  26:
+    name: The monitor suggests that the baby may not be tolerating the labour so well. A caesarean is indicated. Your baby is born by caesarean about an hour later. 
+    image: baby1.jpg
+    options:
+    - key: 0
+      name: Reset
+      outcomes:
+      - key: 0
+        name: Reset
+        likelihood: 1
+        goto: -1
+  101:
+    name: Your baby is born by caesarian later that day.
+    image: baby2.jpg
+    options:
+    - key: 0
+      name: Reset
+      outcomes:
+      - key: 0
+        name: Reset
+        likelihood: 1
+        goto: -1
+  102:
+    name: Your baby is born by ventouse later that day.
+    image: baby1.jpg
+    options:
+    - key: 0
+      name: Reset
+      outcomes:
+      - key: 0
+        name: Reset
+        likelihood: 1
+        goto: -1
+  103:
+    name: Your baby is born by forceps later that day.
+    image: baby2.jpg
+    options:
+    - key: 0
+      name: Reset
+      outcomes:
+      - key: 0
+        name: Reset
+        likelihood: 1
+        goto: -1
+  104:
+    name: Your baby is born vaginally with no complications 2 hours later
+    image: baby1.jpg
+    options:
+    - key: 0
+      name: Reset
+      outcomes:
+      - key: 0
+        name: Reset
+        likelihood: 1
+        goto: -1
+  22:
+    name: Your baby is born vaginally after a 1 hour second stage.
+    image: baby2.jpg
+    options:
+    - key: 0
+      name: Reset
+      outcomes:
+      - key: 0
+        name: Reset
+        likelihood: 1
+        goto: -1
