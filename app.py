@@ -65,6 +65,6 @@ def roll_dice_for_next_stage(stage, option):
 def get_style_html() -> str:
     return HTML_Labour_Stage.get_styles_html()
 
-if __name__ == "__main__":
-    app.run(host='0.0.0.0',port="8400",debug=True)
+#if __name__ == "__main__":
+#    app.run(host='0.0.0.0',port="8400",debug=True)
     #app.run(host="127.0.0.1", port=8080, debug=True)
