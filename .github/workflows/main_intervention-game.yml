@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'intervention-game'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_1207F40F2C294A5CB6550A38B452D937 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E767FBF07D2741F58BA58621F61A63E2 }}
