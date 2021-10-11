@@ -1,3 +1,4 @@
+from typing import List
 from Outcome import Outcome
 
 class Option:
@@ -10,7 +11,7 @@ class Option:
     def setKey(self, key: int) -> None:
         self.key = key
     
-    def setOutcomes(self, outcomes: list[Outcome]) -> None:
+    def setOutcomes(self, outcomes: List[Outcome]) -> None:
         self.outcomes = outcomes
  
     def getName(self) -> str:
@@ -19,5 +20,5 @@ class Option:
     def getKey(self) -> int:
         return self.key
     
-    def getOutcomes(self) -> list[Outcome]:
+    def getOutcomes(self) -> List[Outcome]:
         return self.outcomes
