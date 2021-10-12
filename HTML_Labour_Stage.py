@@ -5,7 +5,7 @@ def get_option_html(option: Option, currentStage: int) -> str:
           <form action="" method="get"> 
                 <input type="hidden" name="stage" value=\"""" + str(currentStage) + """\" />
                 <input type="hidden" name="option" value=\"""" + str(option.getKey()) + """\" />
-                <input type="submit" value=\"""" + option.getName() + """\">
+                <input type="submit" value=\"""" + option.getName() + """\" style="height:50px">
             </form>"""
     debug = False
     if debug:
